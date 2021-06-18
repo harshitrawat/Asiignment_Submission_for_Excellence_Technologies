@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+    <title>My To-Do List</title>
+</head>
+<body>
+    <h2 class="title">My To-Do List</h2>
+    <div class="container-fluid">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="form" placeholder="Add Your To-Do Here" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-md btn-primary" type="button" id="buttonaddon2">
+              Add</button>
+        </div>
+    </div>
+    <ul id="todo" class="container">
+
+    </ul>
+    
+        <button type="button" class="btn btn-md btn-primary" id="removeAll">Clear List</button>
+    <script type="text/javascript">
+        const buttonaddon2 = document.getElementById("buttonaddon2");
+        const todo = document.getElementById("todo");
+        const form = document.getElementById("form");
+        const remove = document.getElementById("close");
+
+
+        buttonaddon2.addEventListener('click',function(){
+
+            const tododiv = document.createElement("div");
+            tododiv.classList.add("todo")
+
+            if(form == ""){
+                alert('Write Your To-Do')
+            }else{
+            var list = document.createElement("li");
+            list.classList.add('list-styling');
+            list.innerText = form.value;
+            todo.appendChild(list);
+            form.value = "";
+            }
+        })
+        removeAll.addEventListener('click',function(){
+            document.getElementById('todo').innerHTML = "";
+        })
+        
+    </script>
+</body>
+</html>
